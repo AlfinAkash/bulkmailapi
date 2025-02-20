@@ -1,15 +1,15 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "api/sendemail.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/sendemail",
-        "dest": "api/sendemail.js"
-      }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/sendemail.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/sendemail",
+      "dest": "/api/sendemail.js"
+    }
+  ]
 }
