@@ -6,7 +6,8 @@ const nodemailer = require("nodemailer");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({ origin: "*" }));
 
 // Configure Nodemailer transporter using environment variables
 const transporter = nodemailer.createTransport({
