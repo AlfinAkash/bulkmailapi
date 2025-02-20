@@ -1,9 +1,8 @@
-require("dotenv").config();
 const nodemailer = require("nodemailer");
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method Not Allowed" });
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
@@ -26,9 +25,9 @@ module.exports = async (req, res) => {
       });
     }
 
-    res.status(200).json({ success: true, message: "Emails sent successfully" });
+    return res.status(200).json({ success: true });
   } catch (error) {
     console.error("Failed to send email:", error);
-    res.status(500).json({ success: false, error: error.message });
+    return res.status(500).json({ success: false, error: error.message });
   }
 };
